@@ -1,48 +1,53 @@
-# Astro Starter Kit: Basics
+# 🌿 Proyecto de Instalación de Productos Decorativos y Funcionales
 
-```sh
-npm create astro@latest -- --template basics
+El objetivo es ofrecer una presentación clara y profesional de servicios de instalación como césped residencial, césped deportivo, lambrín, persianas, muros verdes y pisos laminados.
+
+## 🚀 Tecnologías utilizadas
+
+- **Astro**: Framework moderno para generación de sitios rápidos y optimizados.
+- **React**: Biblioteca de componentes para interfaces interactivas.
+- **Tailwind CSS**: Framework de estilos basado en utilidades.
+- **clsx**: Utilidad para manejo de clases condicionales.
+- **FontAwesome**: Biblioteca de iconos vectoriales para interfaces.
+- **Zustand**: Librería ligera y escalable para el manejo de estados en React.
+
+## 📁 Estructura del proyecto
+
+src/
+├── components/ # Componentes reutilizables (UI, cards, iconos, etc.)
+├── layouts/ # Layouts base para cada tipo de página
+├── pages/
+│ ├── index.astro # Página principal (Home)
+│ ├── cesped-residencial.astro
+│ ├── cesped-deportivo.astro
+│ ├── lambrin.astro
+│ ├── persianas.astro
+│ ├── muros-verdes.astro
+│ └── pisos-laminados.astro
+├── store/ # Estados globales manejados con Zustand
+├── styles/ # Estilos personalizados (si aplica)
+└── utils/ # Funciones utilitarias (opcional)
+
+## 🌐 Páginas del sitio
+
+Cada página describe los beneficios y características de la instalación de cada producto:
+
+- `/cesped-residencial`
+- `/cesped-deportivo`
+- `/lambrin`
+- `/persianas`
+- `/muros-verdes`
+- `/pisos-laminados`
+- `/` (Inicio general con resumen de servicios)
+
+## ⚙️ Instalación y desarrollo
+
+```bash
+npm install
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚀 Deploy
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Puedes ver el sitio en vivo aquí:  
+👉 [https://decostoreinstalaciones.com](https://decostoreinstalaciones.com)

@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Header } from "../components/Header";
+import { InfoLambrin } from "../components/pages/InfoLambrin";
+import { Footer } from "../components/Footer";
+import { GaleryCarrusel } from "../components/GaleryCarrusel";
+const imagesURL = [
+  "/cesped-residencial/uno.webp",
+  "/cesped-residencial/dos.webp",
+];
+---
+
+<Layout
+  title="Instalación de Lambrín - DecoStore"
+  description="Transforma tus muros con instalación de lambrín: una solución estética, funcional y versátil. Mejora la acústica y la temperatura interior, oculta imperfecciones y protege tus paredes con acabados elegantes."
+  keywords="instalación de lambrín, revestimiento de paredes, lambrín decorativo, paneles para muros, diseño de interiores, mejorar paredes, protección de muros, aislamiento acústico y térmico"
+>
+  <Header client:only="react" />
+  <InfoLambrin client:only="react" />
+  <GaleryCarrusel
+    client:only="react"
+    classes="pt-10 4sm:pt-20 md:pt-32"
+    imagesURL={imagesURL}
+  />
+  <Footer client:only="react" classes={"px-5 py-10 4sm:py-20 md:py-32"} />
+</Layout>

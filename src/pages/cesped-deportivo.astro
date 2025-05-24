@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Header } from "../components/Header";
+import { InfoCespedDeportivo } from "../components/pages/InfoCespedDeportivo";
+import { Footer } from "../components/Footer";
+import { GaleryCarrusel } from "../components/GaleryCarrusel";
+const imagesURL = [
+  "/cesped-residencial/uno.webp",
+  "/cesped-residencial/dos.webp",
+];
+---
+
+<Layout
+  title="Instalación de Césped Deportivo - DecoStore"
+  description="Instalamos canchas de césped sintético deportivo de alto rendimiento, con drenaje eficiente y durabilidad para entrenamiento y competencia en cualquier clima. Adaptado a múltiples disciplinas como fútbol, tenis o hockey."
+  keywords="instalación de césped deportivo, pasto sintético para canchas, cancha de fútbol artificial, instalación de pasto para deportes, césped con drenaje, cancha multifuncional, pasto sintético profesional"
+>
+  <Header client:only="react" />
+  <InfoCespedDeportivo client:only="react" />
+  <GaleryCarrusel
+    client:only="react"
+    classes="pt-10 4sm:pt-20 md:pt-32"
+    imagesURL={imagesURL}
+  />
+  <Footer client:only="react" classes={"px-5 py-10 4sm:py-20 md:py-32"} />
+</Layout>

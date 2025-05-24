@@ -1,11 +1,32 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import { HeaderHome } from "../components/HeaderHome";
+import { SectionBenefits } from "../components/SectionBenefits";
+import { SectionAboutUs } from "../components/SectionAboutUs";
+import { SectionInstallations } from "../components/SectionInstallations";
+import { SectionReviews } from "../components/SectionReviews";
+import { SectionMap } from "../components/SectionMap";
+import { SectionPay } from "../components/SectionPay";
+import { SectionSocialMedia } from "../components/SectionSocialMedia";
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Césped Natural y Sintético | Soluciones Verdes para tu Jardín u Oficina"
+  description="Descubre soluciones estéticas, funcionales y sostenibles para transformar tus espacios. Ofrecemos servicios de instalación profesional de césped sintético, lambrín, persianas, muros verdes y pisos laminados, con atención personalizada y materiales de alta calidad."
+  keywords="instalaciones profesionales, decoración de interiores, instalación de césped, instalación de lambrín, persianas a medida, muros verdes, pisos laminados, diseño de espacios, acabados modernos, soluciones decorativas"
+>
+  <HeaderHome client:load />
+  <SectionBenefits client:load classes="pt-12 md:pt-28 px-4 3sm:px-10" />
+  <SectionAboutUs
+    client:load
+    classes="pt-12 md:pt-28 mt-4 md:mt-10 3sm:pb-20"
+  />
+
+  <div class="relative">
+    <SectionInstallations client:load classes={"relative z-30"} />
+    <SectionReviews client:load />
+  </div>
+  <SectionMap client:load classes="py-10 3sm:pt-20 1lg:pt-[120px]" />
+  <SectionPay client:load classes="pb-10 3sm:pt-20" />
+  <SectionSocialMedia client:load classes="pb-20 md:pt-20" />
 </Layout>

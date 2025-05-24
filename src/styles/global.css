@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: sfpd;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fuentes/SFPRODISPLAYREGULAR.OTF") format("opentype");
+}
+@font-face {
+  font-family: sfpd;
+  font-style: medium;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fuentes/SFPRODISPLAYMEDIUM.OTF") format("opentype");
+}
+@font-face {
+  font-family: sfpd;
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fuentes/SFPRODISPLAYBOLD.OTF") format("opentype");
+}
+@font-face {
+  font-family: Sigmar;
+  font-display: swap;
+  src: url("/fuentes/Sigmar.ttf") format("opentype");
+}
+@font-face {
+  font-family: shippori;
+  font-display: swap;
+  src: url("/fuentes/ShipporiMincho-Regular.ttf") format("opentype");
+}
+@theme {
+  --color-deco-blue: #201d1e;
+  --color-deco-green-title: #1b3600;
+  --color-deco-green: #8fb336;
+  --color-deco-gray: #5d6652;
+
+  --font-sfpd: sfpd;
+  --font-sigmar: Sigmar;
+  --font-shippori-mincho: shippori;
+  --breakpoint-sm: 320px;
+  --breakpoint-1sm: 375px;
+  --breakpoint-2sm: 425px;
+  --breakpoint-3sm: 572px;
+  --breakpoint-4sm: 680px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --breakpoint-1lg: 1024px;
+  --breakpoint-2lg: 1284px;
+  --breakpoint-xl: 1440px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1780px;
+  --breakpoint-4xl: 1870px;
+}
+
+/* body {
+  background-color: #f7f5f6;
+} */
+
+.bg-\[\#B33636\] {
+  background-color: #b33636;
+}
+
+.hover-services {
+  display: flex;
+  height: 100%;
+  gap: 10px;
+  cursor: pointer;
+}
+
+/* @media (min-width: 575px) {
+    .hover-services
+  } */
+
+/* .container-services {
+  display: none;
+} */
+
+.hover-services:hover > .container-services {
+  display: block;
+}
+.bars:hover > .container-services {
+  display: block;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+@keyframes slide-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-slide {
+  animation: slide 20s linear infinite;
+}
+.animate-slide-reverse {
+  animation: slide-reverse 20s linear infinite;
+}

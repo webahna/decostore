@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Header } from "../components/Header";
+import { InfoPersianas } from "../components/pages/InfoPersianas";
+import { Footer } from "../components/Footer";
+import { GaleryCarrusel } from "../components/GaleryCarrusel";
+const imagesURL = [
+  "/cesped-residencial/uno.webp",
+  "/cesped-residencial/dos.webp",
+];
+---
+
+<Layout
+  title="Instalación de Persianas - DecoStore"
+  description="Instalamos persianas a medida para controlar luz y privacidad con estilo. Ofrecemos variedad de diseños y materiales para adaptarse a cualquier espacio, con mecanismos prácticos y de alta durabilidad."
+  keywords="instalación de persianas, persianas modernas, persianas para hogar, control de luz, privacidad interior, persianas decorativas, persianas a medida, diseño de ventanas"
+>
+  <Header client:only="react" />
+  <InfoPersianas client:only="react" />
+  <GaleryCarrusel
+    client:only="react"
+    classes="pt-10 4sm:pt-20 md:pt-32"
+    imagesURL={imagesURL}
+  />
+  <Footer client:only="react" classes={"px-5 py-10 4sm:py-20 md:py-32"} />
+</Layout>
