@@ -31,7 +31,7 @@ export const SectionMap = ({ classes = "" }) => {
           <p
             ref={subTitleRef}
             className={clsx(
-              "pt-1 pb-6 1lg:pb-12 transition-all duration-1000 ease-out",
+              "pt-1 pb-6 1lg:pb-12 transition-all duration-500  ease-out",
               {
                 "-translate-y-14 opacity-0": !isSubTitleIntersecting,
                 "-translate-y-0 opacity-100": isSubTitleIntersecting,
@@ -44,7 +44,7 @@ export const SectionMap = ({ classes = "" }) => {
             href="https://maps.app.goo.gl/9UfLiVPJ6GSSQpXQ9"
             target={"_blank"}
             classes={clsx(
-              "bg-[#B33636] text-[#FFFFFF] transition-all duration-1000 ease-out",
+              "bg-[#B33636] text-[#FFFFFF] transition-all duration-500 ease-out mb-4 3sm:mb-0",
               {
                 "-translate-y-14 opacity-0": !isSubTitleIntersecting,
                 "-translate-y-0 opacity-100": isSubTitleIntersecting,
@@ -58,7 +58,7 @@ export const SectionMap = ({ classes = "" }) => {
         <div
           ref={imageRef}
           className={clsx(
-            "w-full 3sm:w-3/6 h-40 3sm:h-auto 3sm:aspect-square overflow-hidden z-10 1lg:rounded-3xl 1lg:rotate-[7.34deg] transition-all duration-1000 ease-out",
+            "w-full 3sm:w-3/6 h-40 3sm:h-auto 3sm:aspect-square overflow-hidden z-10 1lg:rounded-3xl 1lg:rotate-[7.34deg] transition-all duration-500  ease-out",
             {
               "-translate-x-20 md:scale-0 opacity-0": !isImageIntersecting,
               "-translate-x-0 md:scale-100 opacity-100": isImageIntersecting,

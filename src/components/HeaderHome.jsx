@@ -1,19 +1,14 @@
 import { LinkButton } from "./LinkButton";
-// import { useIntersection } from "../hooks/useIntersection";
 import clsx from "clsx";
 
-export const HeaderHome = () => {
-  // const [headerHomeRef, isHeaderHomeIntersecting] = useIntersection
+const URL =
+  "https://wa.me/5212219690933?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20instalaci%C3%B3n.";
 
+export const HeaderHome = () => {
   return (
     <header
-      // ref={headerHomeRef}
       className={clsx(
         "w-full h-[320px] 1sm:h-[375px] 2sm:h-[425px] 3sm:h-[572px] 4sm:h-[680px] md:h-[750px] md:max-h-[750px] overflow-hidden bg-black flex items-center text-white text-center justify-center relative"
-        // {
-        //   "opacity-0": !isHeaderHomeIntersecting,
-        //   "opacity-100": isHeaderHomeIntersecting,
-        // }
       )}
     >
       <picture className="absolute top-0 left-0 w-full h-full z-10">
@@ -39,55 +34,27 @@ export const HeaderHome = () => {
       <div className="flex flex-col items-center z-20">
         <a
           href="/"
-          className={clsx(
-            "pb-4 1sm:pb-6 2sm:pb-8 md:pb-12 transition duration-100 ease-out"
-            // {
-            //   "-translate-y-32 opacity-0": !isHeaderHomeIntersecting,
-            //   "-translate-y-0 opacity-100": isHeaderHomeIntersecting,
-            // }
-          )}
+          className="pb-4 1sm:pb-6 2sm:pb-8 md:pb-12 w-[100px] 1sm:w-[120px] md:w-[160px]"
         >
           <img
-            src="/decostorelogo.png"
-            alt="DecoStore Logo"
-            className="w-28 1sm:w-32 md:w-40 1lg:w-44"
-            width={44}
-            height={17} // Ajustado proporcionalmente (44/180 * 70)
+            src="/decostorelogo.svg"
+            alt="logo decostore"
             loading="lazy"
+            width={160}
+            height={57.7}
           />
         </a>
-        <h1
-          className={clsx(
-            "font-sigmar w-60 text-xl 1sm:w-72 1sm:text-2xl 2sm:w-[360px] 2sm:text-3xl/10 3sm:w-[500px] 3sm:text-[40px]/12 md:w-[630px] md:text-[52px]/16 1lg:w-[730px] 1lg:text-6xl/20 transition duration-100 ease-out"
-            // {
-            //   "scale-0 opacity-0": !isHeaderHomeIntersecting,
-            //   "scale-100 opacity-100": isHeaderHomeIntersecting,
-            // }
-          )}
-        >
+        <h1 className="font-sigmar w-60 text-xl 1sm:w-72 1sm:text-2xl 2sm:w-[360px] 2sm:text-3xl/10 3sm:w-[500px] 3sm:text-[40px]/12 md:w-[630px] md:text-[52px]/16 1lg:w-[730px] 1lg:text-6xl/20 transition duration-100 ease-out">
           Transforma tu espacio con césped sintético de alta calidad
         </h1>
-        <p
-          className={clsx(
-            "w-76 1sm:w-80 text-xs 1sm:text-sm 3sm:w-[500px] 3sm:text-xl md:w-[550px] md:text-2xl 1lg:w-[730px] pt-3 md:pt-6 pb-5 md:pb-10 transition duration-100 ease-out"
-            // {
-            //   "scale-100 opacity-100": isHeaderHomeIntersecting,
-            //   "scale-0 opacity-0": !isHeaderHomeIntersecting,
-            // }
-          )}
-        >
+        <p className="w-76 1sm:w-80 text-xs 1sm:text-sm 3sm:w-[500px] 3sm:text-xl md:w-[550px] md:text-2xl 1lg:w-[730px] pt-3 md:pt-6 pb-5 md:pb-10 transition duration-100 ease-out">
           Instalación profesional, resultados duraderos y cero mantenimiento.
           ¡Ideal para jardines, terrazas, áreas de juego y más!
         </p>
         <LinkButton
-          href="/"
-          classes={clsx(
-            "transition duration-100 ease-out bg-[#B33636] text-[#FFFFFF]"
-            // {
-            //   "-translate-y-32 opacity-0": !isHeaderHomeIntersecting,
-            //   "-translate-y-0 opacity-100": isHeaderHomeIntersecting,
-            // }
-          )}
+          href={URL}
+          target="_blank"
+          classes="transition duration-100 ease-out bg-[#B33636] text-[#FFFFFF]"
         >
           Cotiza sin compromiso
         </LinkButton>

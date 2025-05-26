@@ -19,8 +19,14 @@ export const Header = () => {
         <button className="md:hidden w-10 p-2 opacity-0 text-2xl col-span-1 col-start-12 flex items-center justify-center">
           <FontAwesomeIcon icon={faBars} />
         </button>
-        <a href="/" className="">
-          <img src="/decostorelogo.png" alt="DecoStore Logo" className="w-28" />
+        <a href="/" className="w-28">
+          <img
+            src="/decostorelogo.svg"
+            alt="DecoStore Logo"
+            loading="lazy"
+            width={112}
+            height={40.48}
+          />
         </a>
 
         <div className="text-white font-medium flex md:gap-10 h-full">

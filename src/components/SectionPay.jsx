@@ -7,18 +7,8 @@ import { faCreditCard } from "@fortawesome/free-solid-svg-icons";
 import { Dialog } from "./Dialog";
 import { useBanksDialogStore } from "../store/useBanksDialog";
 
-// const images = [
-//   "/cards/google-play.svg",
-//   "/cards/apple-play.svg",
-//   "/cards/visa.svg",
-//   "/cards/mastercard.svg",
-//   "/cards/carnet.svg",
-//   "/cards/banorte.svg",
-//   "/cards/famsa.svg",
-//   "/cards/banco-azteca.svg",
-//   "/cards/mifel.svg",
-//   "/cards/afirme.svg",
-// ];
+const URL =
+  "https://wa.me/5212219690933?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20pagos%20con%20tarjeta%20de%20cr%C3%A9dito.";
 
 export const SectionPay = ({ classes = "" }) => {
   const [titleRef, isTitleIntersecting] = useIntersection({
@@ -52,7 +42,7 @@ export const SectionPay = ({ classes = "" }) => {
           <div
             ref={cardsRef}
             className={clsx(
-              "w-full overflow-hidden mt-4 md:mt-11 md:max-w-[600px] md:mx-auto transition-all duration-1000 ease-out",
+              "w-full overflow-hidden mt-4 md:mt-11 md:max-w-[600px] md:mx-auto transition-all duration-500  ease-out",
               {
                 "-translate-y-14 opacity-0": !isCardsIntersecting,
                 "-translate-y-0 opacity-100": isCardsIntersecting,
@@ -109,22 +99,23 @@ export const SectionPay = ({ classes = "" }) => {
           </div>
           <div
             ref={buttonsRef}
-            className={clsx("my-6 transition-all duration-1000 ease-out", {
+            className={clsx("my-6 transition-all duration-500  ease-out", {
               "-translate-y-14 opacity-0": !isButtonsIntersecting,
               "-translate-y-0 opacity-100": isButtonsIntersecting,
             })}
           >
             <button
-              className="p-2 font-medium underline cursor-pointer text-base md:text-xl transition-all duration-1000 ease-out"
+              className="p-2 font-medium underline cursor-pointer text-base md:text-xl transition-all duration-500  ease-out"
               onClick={openBanksDialog}
             >
               Ver bancos participantes
             </button>
           </div>
           <LinkButton
-            href="/"
+            href={URL}
+            target="_blank"
             classes={clsx(
-              "bg-[#B33636] text-[#FFFFFF] transition-all duration-1000 ease-out inline-block md:mt-4",
+              "bg-[#B33636] text-[#FFFFFF] transition-all duration-500  ease-out inline-block md:mt-4",
               {
                 "opacity-0": !isButtonsIntersecting,
                 "opacity-100": isButtonsIntersecting,

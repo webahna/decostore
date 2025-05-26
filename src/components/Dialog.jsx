@@ -30,7 +30,7 @@ export const Dialog = () => {
   );
 
   return (
-    <div className="w-full h-screen bg-black/60 fixed top-0 left-0 z-40 transition-all duration-1000 ease-out pt-20 px-4">
+    <div className="w-full h-screen bg-black/60 fixed top-0 left-0 z-40 transition-all duration-500  ease-out pt-20 px-4">
       <div className="w-full max-w-[520px] mx-auto bg-white flex flex-col rounded-lg">
         <div className="flex justify-between items-center px-6 pt-6">
           <h5 className="text-xl md:text-2xl font-semibold text-deco-green-title">

@@ -6,7 +6,7 @@ export const Title = React.forwardRef(({ children, classes = "" }, ref) => {
     <h2
       ref={ref}
       className={clsx(
-        "text-deco-green-title font-semibold py-2 md:py-4 text-2xl 1sm:text-3xl md:text-4xl transition-all duration-1000 ease-out",
+        "text-deco-green-title font-semibold py-2 md:py-4 text-2xl 1sm:text-3xl md:text-4xl transition-all duration-500  ease-out",
         classes
       )}
     >
