@@ -10,7 +10,6 @@ import {
   faSplotch,
   faTools,
 } from "@fortawesome/free-solid-svg-icons";
-import { faPagelines } from "@fortawesome/free-brands-svg-icons";
 
 export const InfoPisosLaminados = ({ classes = "" }) => {
   return (
@@ -20,11 +19,11 @@ export const InfoPisosLaminados = ({ classes = "" }) => {
           <img
             src="/portada-pisos-laminados.webp"
             alt="Portada Pisos Laminados"
-            className="w-full 1lg:rounded-lg"
+            className="rounded-[20px]"
           />
 
           <div className="absolute top-0 left-0 w-full h-full flex justify-center items-center">
-            <h1 className="text-white font-semibold py-2 md:py-4 text-2xl 1sm:text-3xl md:text-6xl text-center px-5">
+            <h1 className="text-white font-semibold py-2 md:py-4 text-xl 1sm:text-2xl 3sm:text-4xl md:text-6xl text-center px-5">
               Instalación de Pisos Laminados.
             </h1>
           </div>

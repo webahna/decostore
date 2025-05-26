@@ -5,9 +5,17 @@ import { InfoMurosVerdes } from "../components/pages/InfoMurosVerdes";
 import { Footer } from "../components/Footer";
 import { GaleryCarrusel } from "../components/GaleryCarrusel";
 const imagesURL = [
-  "/cesped-residencial/uno.webp",
-  "/cesped-residencial/dos.webp",
+  "/image-default.webp",
+  "/image-default.webp",
+  "/image-default.webp",
+  "/image-default.webp",
+  "/image-default.webp",
+  "/image-default.webp",
+  "/image-default.webp",
+  "/image-default.webp",
 ];
+const URL =
+  "https://wa.me/5212219690933?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20instalaci%C3%B3n%20de%20muros%20verdes.";
 ---
 
 <Layout
@@ -16,11 +24,15 @@ const imagesURL = [
   keywords="instalación de muros verdes, jardín vertical, muro verde artificial, decoración natural, plantas en pared, instalación de jardines verticales, diseño biofílico"
 >
   <Header client:only="react" />
-  <InfoMurosVerdes client:only="react" />
+  <InfoMurosVerdes client:only="react" classes="px-5 pt-5" />
   <GaleryCarrusel
     client:only="react"
     classes="pt-10 4sm:pt-20 md:pt-32"
     imagesURL={imagesURL}
   />
-  <Footer client:only="react" classes={"px-5 py-10 4sm:py-20 md:py-32"} />
+  <Footer
+    client:only="react"
+    href={URL}
+    classes={"px-5 py-10 4sm:py-20 md:py-32"}
+  />
 </Layout>

@@ -11,7 +11,7 @@ export const SectionReviews = ({ classes = "" }) => {
       <section
         id="reviews"
         ref={containerRef}
-        className={`w-full aspect-square 4sm:h-[500px] 4sm:max-h-[500px] overflow-hidden bg-[url(/reviews.avif)] bg-cover bg-center px-4 3sm:px-10 ${classes}`}
+        className={`w-full aspect-square 4sm:h-[500px] 4sm:max-h-[500px] overflow-hidden bg-[url(/reviews.avif)] bg-cover bg-center px-5 3sm:px-10 ${classes}`}
       >
         <div
           className={clsx(

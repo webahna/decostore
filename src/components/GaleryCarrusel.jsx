@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { Title } from "./Title";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -96,11 +95,27 @@ export const GaleryCarrusel = ({ classes = "", imagesURL = [""] }) => {
               alt="Imagen ampliada"
               className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
             />
-            <button
+
+            <div className="absolute top-2 left-2 bg-black/70 px-3 py-1 rounded-full text-white text-sm cursor-pointer">
+              {currentIndex + 1}/{imagesURL.length}
+            </div>
+            {/* <button
               className="absolute top-2 right-2 bg-[#EFF4E7] px-2 aspect-square rounded-full shadow hover:bg-gray-200 text-red-500 text-xl cursor-pointer"
               onClick={closeModal}
             >
               <FontAwesomeIcon icon={faXmark} />
+            </button> */}
+            <button
+              className="absolute bottom-2 left-2 bg-[#EFF4E7]/50 px-2 w-10 aspect-square rounded-full shadow hover:bg-gray-200 text-xl cursor-pointer"
+              onClick={prevSlide}
+            >
+              <FontAwesomeIcon icon={faChevronLeft} />
+            </button>
+            <button
+              className="absolute bottom-2 right-2 bg-[#EFF4E7]/50 px-2 w-10 aspect-square rounded-full shadow hover:bg-gray-200 text-xl cursor-pointer"
+              onClick={nextSlide}
+            >
+              <FontAwesomeIcon icon={faChevronRight} />
             </button>
 
             <div></div>
