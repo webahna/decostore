@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -10,9 +10,6 @@ import {
 export const Header = () => {
   const [isActive, setIsActive] = useState(false);
 
-  useEffect(() => {
-    console.log(isActive);
-  }, [isActive]);
   return (
     <header className="w-full bg-deco-blue h-20 font-sfpd px-4 sticky top-0 z-30">
       <nav className="max-w-[990px] mx-auto h-full flex justify-between items-center relative">

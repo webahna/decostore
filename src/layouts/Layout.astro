@@ -2,11 +2,12 @@
 import "../styles/global.css";
 
 interface Props {
+  pageName?: string;
   title: string;
   description: string;
   keywords: string;
 }
-const { title, description, keywords } = Astro.props;
+const { pageName, title, description, keywords } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,13 +19,19 @@ const { title, description, keywords } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="keywords" content={keywords} />
-    <link
-      rel="preload"
-      href="/fuentes/Sigmar-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin="anonymous"
-    />
+
+    {
+      pageName === "home" && (
+        <link
+          rel="preload"
+          href="/fuentes/Sigmar-Regular.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin="anonymous"
+        />
+      )
+    }
+
     <title>
       {title}
     </title>

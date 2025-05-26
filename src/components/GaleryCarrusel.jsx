@@ -94,6 +94,7 @@ export const GaleryCarrusel = ({ classes = "", imagesURL = [""] }) => {
               src={imagesURL[currentIndex]}
               alt="Imagen ampliada"
               className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
+              loading="eager"
             />
 
             <div className="absolute top-2 left-2 bg-black/70 px-3 py-1 rounded-full text-white text-sm cursor-pointer">
