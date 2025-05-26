@@ -22,15 +22,12 @@
   src: url("/fuentes/SFPRODISPLAYBOLD.OTF") format("opentype");
 }
 @font-face {
-  font-family: Sigmar;
+  font-family: "Sigmar";
+  src: url("/fuentes/Sigmar-Regular.woff2") format("woff2"),
+    url("/fuentes/Sigmar-Regular.woff") format("woff");
   font-display: swap;
-  src: url("/fuentes/Sigmar.ttf") format("opentype");
 }
-@font-face {
-  font-family: shippori;
-  font-display: swap;
-  src: url("/fuentes/ShipporiMincho-Regular.ttf") format("opentype");
-}
+
 @theme {
   --color-deco-blue: #201d1e;
   --color-deco-green-title: #1b3600;
@@ -39,7 +36,6 @@
 
   --font-sfpd: sfpd;
   --font-sigmar: Sigmar;
-  --font-shippori-mincho: shippori;
   --breakpoint-sm: 320px;
   --breakpoint-1sm: 375px;
   --breakpoint-2sm: 425px;

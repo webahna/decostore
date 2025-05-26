@@ -11,23 +11,6 @@ El objetivo es ofrecer una presentación clara y profesional de servicios de ins
 - **FontAwesome**: Biblioteca de iconos vectoriales para interfaces.
 - **Zustand**: Librería ligera y escalable para el manejo de estados en React.
 
-## 📁 Estructura del proyecto
-
-src/
-├── components/ # Componentes reutilizables (UI, cards, iconos, etc.)
-├── layouts/ # Layouts base para cada tipo de página
-├── pages/
-│ ├── index.astro # Página principal (Home)
-│ ├── cesped-residencial.astro
-│ ├── cesped-deportivo.astro
-│ ├── lambrin.astro
-│ ├── persianas.astro
-│ ├── muros-verdes.astro
-│ └── pisos-laminados.astro
-├── store/ # Estados globales manejados con Zustand
-├── styles/ # Estilos personalizados (si aplica)
-└── utils/ # Funciones utilitarias (opcional)
-
 ## 🌐 Páginas del sitio
 
 Cada página describe los beneficios y características de la instalación de cada producto:

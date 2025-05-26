@@ -49,7 +49,7 @@ export const Header = () => {
                 className="flex items-center gap-3 hover:bg-[#EFF4E7] rounded px-2"
               >
                 <img
-                  src="/cesped-residencial.png"
+                  src="/cesped-residencial.avif"
                   alt="icono de cesped residencial"
                   className="w-12"
                 />
@@ -63,7 +63,7 @@ export const Header = () => {
                 className="flex items-center gap-3 hover:bg-[#EFF4E7] rounded px-2"
               >
                 <img
-                  src="/cesped-deportivo.png"
+                  src="/cesped-deportivo.avif"
                   alt="icono de cesped deportivo"
                   className="w-12"
                 />
@@ -77,7 +77,7 @@ export const Header = () => {
                 className="flex items-center gap-3 hover:bg-[#EFF4E7] rounded px-2"
               >
                 <img
-                  src="/lambrin.png"
+                  src="/lambrin.avif"
                   alt="icono de lambrin"
                   className="w-12"
                 />
@@ -89,7 +89,7 @@ export const Header = () => {
                 className="flex items-center gap-3 hover:bg-[#EFF4E7] rounded px-2"
               >
                 <img
-                  src="/persianas.png"
+                  src="/persianas.avif"
                   alt="icono de persianas"
                   className="w-12"
                 />
@@ -101,7 +101,7 @@ export const Header = () => {
                 className="flex items-center gap-3 hover:bg-[#EFF4E7] rounded px-2"
               >
                 <img
-                  src="/muros-verdes.png"
+                  src="/muros-verdes.avif"
                   alt="icono de muros verdes"
                   className="w-12"
                 />
@@ -115,7 +115,7 @@ export const Header = () => {
                 className="flex items-center gap-3 hover:bg-[#EFF4E7] rounded px-2"
               >
                 <img
-                  src="/pisos-laminados.png"
+                  src="/pisos-laminados.avif"
                   alt="icono de pisos laminados"
                   className="w-12"
                 />
