@@ -6,8 +6,9 @@ interface Props {
   title: string;
   description: string;
   keywords: string;
+  ogImageLink: string;
 }
-const { pageName, title, description, keywords } = Astro.props;
+const { pageName, title, description, keywords, ogImageLink } = Astro.props;
 ---
 
 <!doctype html>
@@ -31,6 +32,19 @@ const { pageName, title, description, keywords } = Astro.props;
         />
       )
     }
+
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- <meta property="og:url" content={canonical} /> -->
+    <meta property="og:type" content="website" />
+
+    {ogImageLink && <meta property="og:image" content={ogImageLink} />}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
+    {ogImageLink && <meta name="twitter:image" content={ogImageLink} />}
 
     <title>
       {title}
