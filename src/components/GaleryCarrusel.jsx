@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
 
-export const GaleryCarrusel = ({ classes = "", imagesURL = [""] }) => {
+export const GaleryCarrusel = ({ classes = "", imagesURL }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -49,8 +49,8 @@ export const GaleryCarrusel = ({ classes = "", imagesURL = [""] }) => {
         >
           <div className="w-full h-full">
             <img
-              src={imagesURL[currentIndex]}
-              alt={"carrusel-" + currentIndex}
+              src={imagesURL[currentIndex].url}
+              alt={imagesURL[currentIndex].alt}
               className={"w-ful h-full object-cover"}
             />
 
@@ -91,8 +91,8 @@ export const GaleryCarrusel = ({ classes = "", imagesURL = [""] }) => {
             onClick={(e) => e.stopPropagation()}
           >
             <img
-              src={imagesURL[currentIndex]}
-              alt="Imagen ampliada"
+              src={imagesURL[currentIndex].url}
+              alt={imagesURL[currentIndex].alt}
               className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
               loading="eager"
             />

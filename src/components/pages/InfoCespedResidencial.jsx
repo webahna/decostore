@@ -20,6 +20,7 @@ import {
   faMinus,
   faTemperatureLow,
   faMugHot,
+  faCheckSquare,
 } from "@fortawesome/free-solid-svg-icons";
 
 export const InfoCespedResidencial = ({ classes = "" }) => {
@@ -27,11 +28,25 @@ export const InfoCespedResidencial = ({ classes = "" }) => {
 
   return (
     <div className={`${classes}`}>
-      <div className="max-w-[990px] mx-auto flex flex-col pt-10">
-        <h1 className="text-deco-green-title font-semibold py-2 md:py-4 text-2xl 1sm:text-3xl md:text-4xl text-center px-5">
-          Instalación de césped sintético residencial.
+      <div className="max-w-[990px] mx-auto flex flex-col 2sm:pt-4 md:pt-10">
+        <h1 className="text-deco-green-title font-bold pb-4 1sm:text-xl 2sm:text-2xl 3sm:text-3xl md:pb-10 md:text-3xl 1lg:text-5xl text-center uppercase">
+          Zacate Artificial Residencial con Instalación Profesional
         </h1>
+        <p className="text-center text-sm text-deco-gray font-medium pb-4 md:text-xl 1lg:text-2xl md:pb-8">
+          El zacate artificial, también conocido como pasto sintético, es ideal
+          para quienes buscan un jardín verde todo el año sin mantenimiento.
+        </p>
 
+        <p className="text-center font-semibold text-deco-green-title">
+          <span className="pr-2">
+            {" "}
+            <FontAwesomeIcon
+              icon={faCheckSquare}
+              className="text-xl text-deco-green"
+            />
+          </span>
+          ELIGE ENTRE 2 MEDIDAS
+        </p>
         <div className="flex justify-center">
           <div className="flex font-semibold">
             <button

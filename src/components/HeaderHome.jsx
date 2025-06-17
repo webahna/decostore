@@ -44,12 +44,14 @@ export const HeaderHome = () => {
             height={57.7}
           />
         </a>
-        <h1 className="font-sigmar w-60 text-xl 1sm:w-72 1sm:text-2xl 2sm:w-[360px] 2sm:text-3xl/10 3sm:w-[500px] 3sm:text-[40px]/12 md:w-[630px] md:text-[52px]/16 1lg:w-[730px] 1lg:text-6xl/20 transition duration-100 ease-out">
-          Transforma tu espacio con césped sintético de alta calidad
+        <h1 className="font-sigmar px-4 text-base 1sm:text-xl 2sm:px-4 2sm:text-2xl 3sm:px-10 3sm:text-[40px]/12 md:px-16 md:text-[52px]/16 1lg:w-[1020px] 1lg:px-0 1lg:text-6xl/20 transition duration-100 ease-out">
+          Instalación de pasto sintético de alta calidad para jardines, terrazas
+          y más.
         </h1>
-        <p className="w-76 1sm:w-80 text-xs 1sm:text-sm 3sm:w-[500px] 3sm:text-xl md:w-[550px] md:text-2xl 1lg:w-[730px] pt-3 md:pt-6 pb-5 md:pb-10 transition duration-100 ease-out">
-          Instalación profesional, resultados duraderos y cero mantenimiento.
-          ¡Ideal para jardines, terrazas, áreas de juego y más!
+        <p className="px-4 1sm:px-4 text-xs 1sm:text-sm 3sm:px-10 3sm:text-xl md:px-16 md:text-2xl 1lg:w-[1020px] 1lg:px-0 pt-3 md:pt-6 pb-5 md:pb-10 transition duration-100 ease-out">
+          Soluciones decorativas y funcionales para tus espacios. Instalación
+          profesional, sin mantenimiento y con acabados duraderos. Atendemos
+          Puebla y Los Mochis.
         </p>
         <LinkButton
           href={URL}

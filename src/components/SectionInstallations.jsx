@@ -93,7 +93,7 @@ export const SectionInstallations = ({ classes }) => {
               height={120}
             />
             <h3 className="text-xl md:text-2xl font-semibold text-deco-green-title">
-              Césped Residencial
+              Pasto Residencial
             </h3>
             <a
               href="/cesped-residencial"
@@ -127,7 +127,7 @@ export const SectionInstallations = ({ classes }) => {
               height={120}
             />
             <h3 className="text-xl md:text-2xl font-semibold text-deco-green-title">
-              Césped Deportivo
+              Pasto Deportivo
             </h3>
             <a
               href="/cesped-deportivo"
