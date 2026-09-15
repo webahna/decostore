@@ -1,38 +1,47 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Header } from "../components/Header";
-import { InfoMurosVerdes } from "../components/pages/InfoMurosVerdes";
-import { Footer } from "../components/Footer";
-import { GaleryCarrusel } from "../components/GaleryCarrusel";
-const imagesURL = [
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
+import ProductServicePage from "../components/ProductServicePage.astro";
+import {
+  faBolt,
+  faFaceSmileBeam,
+  faFan,
+  faHandHoldingDollar,
+  faLeaf,
+  faSeedling,
+  faTemperatureThreeQuarters,
+  faUpDown,
+  faWind,
+} from "@fortawesome/free-solid-svg-icons";
+
+const benefits = [
+  { icon: faLeaf, title: "Presencia natural", description: "Integra vegetación y textura para crear un punto focal lleno de vida." },
+  { icon: faTemperatureThreeQuarters, title: "Confort ambiental", description: "Un muro natural puede contribuir al comportamiento térmico y acústico." },
+  { icon: faWind, title: "Humedad ambiental", description: "Las plantas naturales liberan humedad y pueden mejorar el confort interior." },
+  { icon: faFaceSmileBeam, title: "Bienestar visual", description: "La presencia de vegetación crea ambientes más agradables y acogedores." },
+  { icon: faBolt, title: "Eficiencia pasiva", description: "La capa vegetal puede apoyar el aislamiento de la superficie intervenida." },
+  { icon: faSeedling, title: "Diseño biofílico", description: "Fortalece la conexión visual con la naturaleza en interiores y exteriores." },
+  { icon: faHandHoldingDollar, title: "Valor estético", description: "Mejora la percepción del espacio mediante una intervención distintiva." },
+  { icon: faUpDown, title: "Verde en vertical", description: "Aprovecha muros disponibles sin ocupar superficie útil en el piso." },
+  { icon: faFan, title: "Apoyo a la biodiversidad", description: "En exteriores, las especies adecuadas pueden atraer polinizadores." },
 ];
-const URL =
-  "https://wa.me/5212219690933?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20instalaci%C3%B3n%20de%20muros%20verdes.";
 ---
 
-<Layout
-  title="Instalación de Muros Verdes - DecoStore"
-  description="Instalación de muros verdes naturales o artificiales para dar vida y frescura a tus espacios. Ideales para decoración interior o exterior, mejoran la estética y el bienestar ambiental."
-  ogImageLink=""
->
-  <Header client:only="react" />
-  <InfoMurosVerdes client:only="react" classes="px-5 pt-5" />
-  <GaleryCarrusel
-    client:only="react"
-    classes="pt-10 4sm:pt-20 md:pt-32"
-    imagesURL={imagesURL}
-  />
-  <Footer
-    client:only="react"
-    href={URL}
-    classes={"px-5 py-10 4sm:py-20 md:py-32"}
-  />
-</Layout>
+<ProductServicePage
+  metaTitle="Instalación de muros verdes | Decostore"
+  description="Diseño e instalación de muros verdes naturales o artificiales para transformar espacios interiores y exteriores."
+  heroImage="/portada-muros-verdes.webp"
+  heroAlt="Muro verde instalado como elemento central de un espacio"
+  productName="Muros verdes"
+  eyebrow="Naturaleza que aprovecha cada muro"
+  title="Haz del verde parte de la arquitectura."
+  lead="Muros verdes naturales o artificiales diseñados para dar textura, frescura visual y una identidad única a cada espacio."
+  highlights={["Diseño a medida", "Interior o exterior", "Impacto visual"]}
+  benefitsTitle="Una forma inteligente de incorporar naturaleza."
+  benefitsLead="El jardín vertical aprovecha superficies disponibles y convierte un muro en una experiencia visual memorable."
+  {benefits}
+  applicationsTitle="Verde donde antes había un muro vacío."
+  applicationsLead="La selección entre vegetación natural o artificial depende de la luz, el mantenimiento y las condiciones del lugar."
+  applications={["Patios, terrazas y fachadas", "Salas, recibidores y dobles alturas", "Restaurantes, oficinas y espacios comerciales", "Muros con poco espacio disponible en planta"]}
+  ctaTitle="Diseñemos un muro que transforme el ambiente."
+  ctaLead="Cuéntanos dónde quieres instalarlo y si prefieres una solución natural o de bajo mantenimiento."
+  quoteUrl="https://wa.me/5212219690933?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20instalaci%C3%B3n%20de%20muros%20verdes."
+/>

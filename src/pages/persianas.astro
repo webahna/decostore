@@ -1,38 +1,47 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Header } from "../components/Header";
-import { InfoPersianas } from "../components/pages/InfoPersianas";
-import { Footer } from "../components/Footer";
-import { GaleryCarrusel } from "../components/GaleryCarrusel";
-const imagesURL = [
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
+import ProductServicePage from "../components/ProductServicePage.astro";
+import {
+  faBroom,
+  faChair,
+  faFire,
+  faHandBackFist,
+  faLock,
+  faPalette,
+  faShieldHalved,
+  faSun,
+  faVolumeLow,
+} from "@fortawesome/free-solid-svg-icons";
+
+const benefits = [
+  { icon: faSun, title: "Control de luz", description: "Regula la entrada de luz según la hora, el ambiente y la actividad." },
+  { icon: faChair, title: "Protección interior", description: "Ayuda a reducir la exposición solar sobre muebles, textiles y pisos." },
+  { icon: faLock, title: "Mayor privacidad", description: "Controla la visibilidad desde el exterior en hogares y oficinas." },
+  { icon: faShieldHalved, title: "Sensación de resguardo", description: "Una persiana cerrada añade privacidad visual al espacio." },
+  { icon: faFire, title: "Confort térmico", description: "Ayuda a controlar la incidencia directa del sol en el interior." },
+  { icon: faPalette, title: "Diseño a tu estilo", description: "Hay colores, materiales y aperturas para diferentes ambientes." },
+  { icon: faVolumeLow, title: "Confort acústico", description: "Algunos materiales ayudan a suavizar el ruido del entorno." },
+  { icon: faBroom, title: "Fácil mantenimiento", description: "Su limpieza cotidiana puede realizarse con paño o plumero." },
+  { icon: faHandBackFist, title: "Durabilidad", description: "Materiales y mecanismos seleccionados para acompañar el uso diario." },
 ];
-const URL =
-  "https://wa.me/5212219690933?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20instalaci%C3%B3n%20de%20persianas.";
 ---
 
-<Layout
-  title="Instalación de Persianas - DecoStore"
-  description="Instalamos persianas a medida para controlar luz y privacidad con estilo. Ofrecemos variedad de diseños y materiales para adaptarse a cualquier espacio, con mecanismos prácticos y de alta durabilidad."
-  ogImageLink=""
->
-  <Header client:only="react" />
-  <InfoPersianas client:only="react" classes="px-5 pt-5" />
-  <GaleryCarrusel
-    client:only="react"
-    classes="pt-10 4sm:pt-20 md:pt-32"
-    imagesURL={imagesURL}
-  />
-  <Footer
-    client:only="react"
-    href={URL}
-    classes={"px-5 py-10 4sm:py-20 md:py-32"}
-  />
-</Layout>
+<ProductServicePage
+  metaTitle="Persianas a medida con instalación | Decostore"
+  description="Instalamos persianas a medida para controlar la luz y privacidad con estilo, con variedad de diseños, materiales y mecanismos."
+  heroImage="/portada-persianas.webp"
+  heroAlt="Persianas instaladas en un interior contemporáneo"
+  productName="Persianas"
+  eyebrow="Control de luz, privacidad y diseño"
+  title="La luz correcta cambia cómo se siente un espacio."
+  lead="Persianas a medida para crear ambientes cómodos, privados y coherentes con el estilo de tu hogar u oficina."
+  highlights={["Hechas a medida", "Control de luz", "Instalación cuidada"]}
+  benefitsTitle="Confort y control en cada momento del día."
+  benefitsLead="Una buena persiana equilibra iluminación, privacidad y diseño sin complicar el uso cotidiano."
+  {benefits}
+  applicationsTitle="Soluciones para cada ventana y ambiente."
+  applicationsLead="Consideramos orientación, dimensiones, nivel de privacidad y estilo antes de recomendar un sistema."
+  applications={["Salas, comedores y recámaras", "Oficinas, consultorios y salas de juntas", "Ventanas con alta incidencia solar", "Espacios que requieren privacidad regulable"]}
+  ctaTitle="Encuentra la persiana adecuada para tu espacio."
+  ctaLead="Envíanos las medidas aproximadas o una fotografía y te ayudaremos a explorar opciones."
+  quoteUrl="https://wa.me/5212219690933?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20instalaci%C3%B3n%20de%20persianas."
+/>

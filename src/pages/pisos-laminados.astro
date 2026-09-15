@@ -1,39 +1,47 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Header } from "../components/Header";
-import { InfoPisosLaminados } from "../components/pages/InfoPisosLaminados";
-import { Footer } from "../components/Footer";
-import { GaleryCarrusel } from "../components/GaleryCarrusel";
-const imagesURL = [
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-];
+import ProductServicePage from "../components/ProductServicePage.astro";
+import {
+  faBroom,
+  faDollarSign,
+  faHandSparkles,
+  faHouse,
+  faPalette,
+  faShieldHalved,
+  faShoePrints,
+  faSplotch,
+  faScrewdriverWrench,
+} from "@fortawesome/free-solid-svg-icons";
 
-const URL =
-  "https://wa.me/5212219690933?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20instalaci%C3%B3n%20de%20pisos%20laminados.";
+const benefits = [
+  { icon: faPalette, title: "Estética moderna", description: "Reproduce la apariencia de madera, piedra u otros acabados." },
+  { icon: faShieldHalved, title: "Alta durabilidad", description: "Está diseñado para acompañar el tránsito y el uso cotidiano." },
+  { icon: faBroom, title: "Limpieza fácil", description: "El mantenimiento diario se resuelve con barrido o paño adecuado." },
+  { icon: faScrewdriverWrench, title: "Instalación eficiente", description: "El sistema de ensamble permite renovar interiores con mayor rapidez." },
+  { icon: faDollarSign, title: "Buena relación costo-diseño", description: "Ofrece apariencia cuidada con una inversión más accesible que otros materiales." },
+  { icon: faHandSparkles, title: "Superficie higiénica", description: "Su acabado liso facilita retirar polvo y suciedad cotidiana." },
+  { icon: faSplotch, title: "Cuidado ante derrames", description: "La limpieza oportuna ayuda a conservar el acabado en buen estado." },
+  { icon: faShoePrints, title: "Mayor confort", description: "La subcapa puede aportar una pisada más cálida y confortable." },
+  { icon: faHouse, title: "Versatilidad", description: "Funciona en distintos ambientes residenciales y profesionales." },
+];
 ---
 
-<Layout
-  title="Instalación de Pisos Laminados - DecoStore"
-  description="Instalamos pisos laminados con acabados tipo madera, resistentes al uso diario y fáciles de mantener. Una opción estética y práctica para renovar interiores con rapidez y estilo."
-  ogImageLink=""
->
-  <Header client:only="react" />
-  <InfoPisosLaminados client:only="react" classes="px-5 pt-5" />
-  <GaleryCarrusel
-    client:only="react"
-    classes="pt-10 4sm:pt-20 md:pt-32"
-    imagesURL={imagesURL}
-  />
-  <Footer
-    client:only="react"
-    href={URL}
-    classes={"px-5 py-10 4sm:py-20 md:py-32"}
-  />
-</Layout>
+<ProductServicePage
+  metaTitle="Instalación de pisos laminados | Decostore"
+  description="Instalamos pisos laminados con acabados tipo madera, resistentes al uso diario y fáciles de mantener para hogares y oficinas."
+  heroImage="/portada-pisos-laminados.webp"
+  heroAlt="Interior renovado con piso laminado de apariencia natural"
+  productName="Pisos laminados"
+  eyebrow="Calidez y estilo desde el piso"
+  title="Renueva el ambiente desde el primer paso."
+  lead="Pisos laminados con apariencia natural, cuidado sencillo e instalación profesional para transformar interiores con rapidez."
+  highlights={["Acabado natural", "Fácil mantenimiento", "Instalación eficiente"]}
+  benefitsTitle="Diseño práctico para la vida cotidiana."
+  benefitsLead="El piso laminado combina una imagen cálida con cualidades pensadas para espacios que se usan todos los días."
+  {benefits}
+  applicationsTitle="Una base versátil para cada interior."
+  applicationsLead="Elegimos tono, formato y resistencia de acuerdo con la iluminación, el tránsito y el carácter del lugar."
+  applications={["Salas, comedores y recámaras", "Estudios y oficinas", "Recepciones y espacios comerciales", "Remodelaciones que buscan un cambio rápido y visible"]}
+  ctaTitle="Encuentra el piso que complete tu espacio."
+  ctaLead="Envíanos las medidas aproximadas y el estilo que buscas para orientarte con opciones."
+  quoteUrl="https://wa.me/5212219690933?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20instalaci%C3%B3n%20de%20pisos%20laminados."
+/>

@@ -1,33 +1,278 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { HeaderHome } from "../components/HeaderHome";
-import { SectionBenefits } from "../components/SectionBenefits";
-import { SectionAboutUs } from "../components/SectionAboutUs";
-import { SectionInstallations } from "../components/SectionInstallations";
-import { SectionReviews } from "../components/SectionReviews";
-import { SectionMap } from "../components/SectionMap";
-import { SectionPay } from "../components/SectionPay";
-import { SectionSocialMedia } from "../components/SectionSocialMedia";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRight,
+  faCheck,
+  faCreditCard,
+  faDroplet,
+  faLeaf,
+  faLocationDot,
+  faShieldHeart,
+  faSun,
+} from "@fortawesome/free-solid-svg-icons";
+import {
+  faFacebook,
+  faInstagram,
+  faTiktok,
+  faYoutube,
+} from "@fortawesome/free-brands-svg-icons";
+
+const quoteUrl =
+  "https://wa.me/5212219690933?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20instalaci%C3%B3n.";
+const paymentUrl =
+  "https://wa.me/5212219690933?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20pagos%20con%20tarjeta%20de%20cr%C3%A9dito.";
+
+const benefits = [
+  { icon: faSun, number: "01", title: "Siempre verde", description: "Disfruta un espacio impecable durante todo el año." },
+  { icon: faDroplet, number: "02", title: "Menos consumo", description: "Ahorra agua y reduce las tareas de mantenimiento." },
+  { icon: faShieldHeart, number: "03", title: "Hecho para durar", description: "Resiste el uso diario y las condiciones del clima." },
+  { icon: faLeaf, number: "04", title: "Para toda la familia", description: "Una superficie cómoda para niños y mascotas." },
+];
+
+const services = [
+  { title: "Pasto residencial", description: "Jardines, terrazas y áreas de convivencia siempre listas.", image: "/cesped-residencial.avif", href: "/cesped-residencial" },
+  { title: "Pasto deportivo", description: "Superficies resistentes para canchas y espacios de alto uso.", image: "/cesped-deportivo.avif", href: "/cesped-deportivo" },
+  { title: "Lambrín", description: "Textura y calidez para renovar muros interiores y exteriores.", image: "/lambrin.avif", href: "/lambrin" },
+  { title: "Persianas", description: "Control de luz, privacidad y diseño a la medida de tu espacio.", image: "/persianas.avif", href: "/persianas" },
+  { title: "Muros verdes", description: "Un acento natural que transforma espacios sin mantenimiento.", image: "/muros-verdes.avif", href: "/muros-verdes" },
+  { title: "Pisos laminados", description: "Acabados cálidos, prácticos y duraderos para cada ambiente.", image: "/pisos-laminados.avif", href: "/pisos-laminados" },
+];
+
+const principles = [
+  "Recomendación según el uso real de tu espacio",
+  "Materiales seleccionados por calidad y durabilidad",
+  "Instalación cuidada de principio a fin",
+];
+
+const cardBrands = [
+  { src: "/cards/visa.svg", alt: "Visa", width: 80, height: 30 },
+  { src: "/cards/mastercard.svg", alt: "Mastercard", width: 80, height: 60 },
+  { src: "/cards/carnet.svg", alt: "Carnet", width: 80, height: 50 },
+  { src: "/cards/google-pay.svg", alt: "Google Pay", width: 80, height: 42 },
+  { src: "/cards/apple-pay.svg", alt: "Apple Pay", width: 80, height: 36 },
+];
+
+const bankBrands = [
+  "banorte.svg", "afirme.svg", "banbajio.svg", "mifel.svg", "banco-azteca.svg", "famsa.svg",
+  "banjercito.svg", "banregio.svg", "falabella-soriana.svg", "hsbc.svg", "inbursa.svg", "invex.svg",
+  "konfio.png", "liverpool.svg", "santander.svg", "scotiabank.svg",
+];
+
+const socialLinks = [
+  { name: "Instagram", href: "https://www.instagram.com/decostore_mx?igsh=cjEyYWhtY2FoZHpj", icon: faInstagram },
+  { name: "Facebook", href: "https://www.facebook.com/share/162pwtbbqS/?mibextid=wwXIfr", icon: faFacebook },
+  { name: "TikTok", href: "https://www.tiktok.com/@decostorepue?_t=ZS-8vd5Oq6tEXf&_r=1", icon: faTiktok },
+  { name: "YouTube", href: "https://youtube.com/@decostorepue?si=2CuSnACgMYaNigkF", icon: faYoutube },
+];
 ---
 
 <Layout
   pageName="home"
   title="Instalación de pasto sintético, pisos laminados y persianas | Puebla y Los Mochis"
   description="Especialistas en instalación de pasto sintético, muros verdes, lambrín decorativo y otros acabados. Atendemos hogares y negocios en Puebla y Los Mochis con materiales duraderos y atención profesional."
-  ogImageLink="/hero/portada-hero.avif "
+  ogImageLink="/hero/portada-hero.avif"
 >
-  <HeaderHome />
-  <SectionBenefits client:load classes="pt-12 md:pt-28 px-5 3sm:px-10" />
-  <SectionAboutUs
-    client:load
-    classes="pt-12 md:pt-28 mt-4 md:mt-10 3sm:pb-20 px-5 3sm:px-10"
-  />
+  <a href="#contenido" class="fixed left-4 top-4 z-50 -translate-y-24 rounded-full bg-white px-5 py-3 font-semibold text-deco-blue shadow-xl transition-transform focus:translate-y-0 focus:outline-none focus:ring-4 focus:ring-deco-green/50">
+    Ir al contenido
+  </a>
 
-  <div class="relative">
-    <SectionInstallations client:load classes={"relative z-30"} />
-    <SectionReviews client:load />
+  <div class="overflow-x-clip bg-stone-50 font-sfpd text-deco-blue">
+    <header class="relative isolate min-h-[680px] overflow-hidden bg-deco-blue text-white md:min-h-[760px]">
+      <picture class="absolute inset-0 -z-20">
+        <source type="image/avif" srcset="/hero/portada-hero-320.avif 320w, /hero/portada-hero-375.avif 375w, /hero/portada-hero-425.avif 425w, /hero/portada-hero.avif 1600w" sizes="100vw" />
+        <img src="/hero/portada-hero.avif" alt="Jardín residencial renovado con pasto sintético" width="1600" height="750" fetchpriority="high" class="h-full w-full object-cover object-center" />
+      </picture>
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-black/85 via-black/65 to-black/25"></div>
+
+      <nav aria-label="Navegación principal" class="mx-auto flex max-w-7xl items-center justify-between px-5 py-6 sm:px-8 lg:px-12">
+        <a href="/" aria-label="Decostore, inicio" class="rounded-md focus:outline-none focus:ring-4 focus:ring-deco-green/60">
+          <img src="/decostorelogo.svg" alt="Decostore" width="160" height="58" class="h-auto w-32 brightness-0 invert sm:w-36" />
+        </a>
+        <div class="hidden items-center gap-8 text-sm font-semibold lg:flex">
+          <a class="transition-colors hover:text-deco-green focus:outline-none focus:ring-2 focus:ring-deco-green" href="#benefits">Beneficios</a>
+          <a class="transition-colors hover:text-deco-green focus:outline-none focus:ring-2 focus:ring-deco-green" href="#installations">Servicios</a>
+          <a class="transition-colors hover:text-deco-green focus:outline-none focus:ring-2 focus:ring-deco-green" href="#map">Ubicación</a>
+        </div>
+        <a href={quoteUrl} target="_blank" rel="noreferrer" class="inline-flex min-h-12 items-center justify-center rounded-full bg-deco-green px-5 text-sm font-bold text-deco-blue shadow-lg transition hover:bg-white focus:outline-none focus:ring-4 focus:ring-white/60 active:scale-[.98] sm:px-6">
+          Cotizar
+        </a>
+      </nav>
+
+      <div class="mx-auto flex min-h-[570px] max-w-7xl items-center px-5 pb-16 pt-8 sm:px-8 md:pb-24 lg:px-12">
+        <div class="max-w-3xl">
+          <p class="mb-5 inline-flex items-center rounded-full border border-white/30 bg-black/25 px-4 py-2 text-sm font-semibold backdrop-blur-sm">Instalación profesional en Puebla y Los Mochis</p>
+          <h1 class="max-w-3xl text-balance font-sigmar text-4xl leading-[1.08] sm:text-5xl md:text-6xl lg:text-7xl">Espacios que se disfrutan todos los días.</h1>
+          <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-white/90 md:text-xl">Transformamos jardines, terrazas e interiores con pasto sintético y acabados duraderos, instalados con atención en cada detalle.</p>
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a href={quoteUrl} target="_blank" rel="noreferrer" class="inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-deco-green px-7 font-bold text-deco-blue shadow-xl shadow-black/20 transition hover:bg-white focus:outline-none focus:ring-4 focus:ring-white/60 active:scale-[.98]">
+              Cotiza sin compromiso
+              <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" className="h-4" />
+            </a>
+            <a href="#installations" class="inline-flex min-h-14 items-center justify-center rounded-full border border-white/50 bg-white/10 px-7 font-bold text-white backdrop-blur-sm transition hover:bg-white hover:text-deco-blue focus:outline-none focus:ring-4 focus:ring-white/60 active:scale-[.98]">Explorar servicios</a>
+          </div>
+          <div class="mt-10 flex flex-wrap gap-x-7 gap-y-3 text-sm font-medium text-white/85">
+            <span class="inline-flex items-center gap-2"><FontAwesomeIcon icon={faCheck} aria-hidden="true" className="h-3 text-deco-green" />Asesoría personalizada</span>
+            <span class="inline-flex items-center gap-2"><FontAwesomeIcon icon={faCheck} aria-hidden="true" className="h-3 text-deco-green" />Materiales duraderos</span>
+            <span class="inline-flex items-center gap-2"><FontAwesomeIcon icon={faCheck} aria-hidden="true" className="h-3 text-deco-green" />Instalación profesional</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido">
+      <section id="benefits" aria-labelledby="benefits-title" class="px-5 py-20 sm:px-8 md:py-28 lg:px-12">
+        <div class="mx-auto max-w-7xl">
+          <div class="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
+            <div>
+              <p class="text-sm font-bold uppercase tracking-[.18em] text-deco-gray">Una decisión práctica</p>
+              <h2 id="benefits-title" class="mt-3 max-w-xl text-balance text-3xl font-bold leading-tight text-deco-green-title sm:text-4xl md:text-5xl">Más tiempo para disfrutar tu espacio.</h2>
+            </div>
+            <p class="max-w-2xl text-lg leading-8 text-deco-gray lg:justify-self-end">El pasto sintético combina una apariencia natural con el desempeño que necesitan los espacios de uso diario.</p>
+          </div>
+          <div class="mt-10 grid gap-4 3sm:grid-cols-2 lg:mt-12 lg:grid-cols-4">
+            {benefits.map((benefit) => (
+              <article class="group rounded-3xl border border-stone-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-deco-green/50 hover:shadow-xl 3sm:p-6 md:p-7">
+                <div class="flex items-center justify-between">
+                  <span class="grid size-12 place-items-center rounded-2xl bg-deco-green/15 text-deco-green-title"><FontAwesomeIcon icon={benefit.icon} aria-hidden="true" className="h-5" /></span>
+                  <span class="text-sm font-bold text-stone-400">{benefit.number}</span>
+                </div>
+                <h3 class="mt-6 text-xl font-bold text-deco-green-title 3sm:mt-8">{benefit.title}</h3>
+                <p class="mt-2 leading-7 text-deco-gray">{benefit.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="aboutUs" aria-labelledby="about-title" class="px-5 pb-20 sm:px-8 md:pb-28 lg:px-12">
+        <div class="mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] bg-deco-green-title text-white shadow-2xl lg:grid-cols-2">
+          <div class="relative min-h-80 lg:min-h-[560px]">
+            <picture>
+              <source type="image/avif" srcset="/image-about-us-280px-x2.avif 560w, /image-about-us-400px-x2.avif 800w" sizes="(min-width: 1024px) 50vw, 100vw" />
+              <img src="/image-about-us-400px-x2.avif" alt="Equipo de Decostore instalando pasto sintético residencial" width="800" height="800" loading="lazy" class="absolute inset-0 h-full w-full object-cover" />
+            </picture>
+          </div>
+          <div class="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
+            <p class="text-sm font-bold uppercase tracking-[.18em] text-deco-green">Sobre Decostore</p>
+            <h2 id="about-title" class="mt-4 text-balance text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">Diseño, materiales y una instalación bien cuidada.</h2>
+            <p class="mt-6 max-w-xl text-lg leading-8 text-white/80">Creamos espacios funcionales, estéticos y duraderos. Escuchamos lo que necesitas y te acompañamos desde la elección del material hasta el último detalle.</p>
+            <ul class="mt-8 space-y-4" aria-label="Nuestro proceso">
+              {principles.map((principle) => (
+                <li class="flex items-start gap-3 text-white/90">
+                  <span class="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-deco-green text-deco-green-title"><FontAwesomeIcon icon={faCheck} aria-hidden="true" className="h-3" /></span>
+                  <span>{principle}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="installations" aria-labelledby="services-title" class="bg-white px-5 py-20 sm:px-8 md:py-28 lg:px-12">
+        <div class="mx-auto max-w-7xl">
+          <div class="mx-auto max-w-3xl text-center">
+            <p class="text-sm font-bold uppercase tracking-[.18em] text-deco-gray">Nuestros servicios</p>
+            <h2 id="services-title" class="mt-3 text-balance text-3xl font-bold leading-tight text-deco-green-title sm:text-4xl md:text-5xl">Encuentra el acabado ideal para tu proyecto.</h2>
+            <p class="mt-5 text-lg leading-8 text-deco-gray">Soluciones para exteriores e interiores, con asesoría para elegir la opción que mejor se adapta a cada espacio.</p>
+          </div>
+          <div class="mt-10 grid gap-5 3sm:grid-cols-2 lg:mt-12 lg:grid-cols-3">
+            {services.map((service) => (
+              <a href={service.href} class="group overflow-hidden rounded-3xl border border-stone-200 bg-stone-50 transition duration-300 hover:-translate-y-1 hover:border-deco-green/50 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-deco-green/30">
+                <div class="aspect-[16/10] overflow-hidden bg-stone-200">
+                  <img src={service.image} alt="" width="360" height="360" loading="lazy" class="h-full w-full object-cover transition duration-500 motion-reduce:transition-none group-hover:scale-105 motion-reduce:group-hover:scale-100" />
+                </div>
+                <div class="p-5 3sm:p-6">
+                  <div class="flex items-start justify-between gap-4">
+                    <h3 class="text-2xl font-bold text-deco-green-title">{service.title}</h3>
+                    <span class="grid size-10 shrink-0 place-items-center rounded-full bg-deco-green text-deco-green-title transition group-hover:bg-deco-green-title group-hover:text-white"><FontAwesomeIcon icon={faArrowRight} aria-hidden="true" className="h-4 -rotate-45" /></span>
+                  </div>
+                  <p class="mt-3 leading-7 text-deco-gray">{service.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="reviews" aria-labelledby="commitment-title" class="relative isolate overflow-hidden px-5 py-24 text-white sm:px-8 md:py-32 lg:px-12">
+        <img src="/reviews.avif" alt="" width="1600" height="500" loading="lazy" class="absolute inset-0 -z-20 h-full w-full object-cover" />
+        <div class="absolute inset-0 -z-10 bg-deco-green-title/90"></div>
+        <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_.85fr] lg:items-center">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-[.18em] text-deco-green">Nuestro compromiso</p>
+            <h2 id="commitment-title" class="mt-3 max-w-3xl text-balance text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">Un resultado que se vea bien y funcione mejor.</h2>
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-white/80">Cada proyecto parte de tu espacio, su uso y el acabado que quieres lograr. Así podemos recomendarte una solución útil, estética y duradera.</p>
+          </div>
+          <div class="rounded-3xl border border-white/20 bg-white/10 p-7 backdrop-blur-sm sm:p-9">
+            <p class="text-xl font-semibold leading-8 sm:text-2xl">“Tu proyecto merece una recomendación clara, materiales adecuados y atención en cada etapa.”</p>
+            <div class="mt-6 flex items-center gap-3 border-t border-white/20 pt-6">
+              <img src="/decostore-favicon.png" alt="" width="48" height="48" class="size-12 rounded-full bg-white object-contain p-2" />
+              <div><p class="font-bold">Equipo Decostore</p><p class="text-sm text-white/70">Especialistas en transformación de espacios</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="map" aria-labelledby="map-title" class="px-5 py-20 sm:px-8 md:py-28 lg:px-12">
+        <div class="mx-auto grid max-w-7xl overflow-hidden rounded-[2rem] border border-stone-200 bg-white shadow-xl lg:grid-cols-[.85fr_1.15fr]">
+          <div class="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
+            <span class="grid size-12 place-items-center rounded-2xl bg-deco-green/15 text-deco-green-title"><FontAwesomeIcon icon={faLocationDot} aria-hidden="true" className="h-5" /></span>
+            <p class="mt-8 text-sm font-bold uppercase tracking-[.18em] text-deco-gray">Visítanos</p>
+            <h2 id="map-title" class="mt-3 text-balance text-3xl font-bold leading-tight text-deco-green-title sm:text-4xl">Conoce nuestra sucursal en Puebla.</h2>
+            <address class="mt-5 max-w-md text-lg not-italic leading-8 text-deco-gray">Calle 117 B Poniente, Heroica Puebla de Zaragoza, Puebla.</address>
+            <a href="https://maps.app.goo.gl/9UfLiVPJ6GSSQpXQ9" target="_blank" rel="noreferrer" class="mt-8 inline-flex min-h-14 w-fit items-center justify-center gap-3 rounded-full bg-deco-green-title px-7 font-bold text-white transition hover:bg-deco-green focus:outline-none focus:ring-4 focus:ring-deco-green/30 active:scale-[.98]">
+              Cómo llegar <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" className="h-4 -rotate-45" />
+            </a>
+          </div>
+          <div class="min-h-80 bg-stone-200 lg:min-h-[520px]"><img src="/map.avif" alt="Mapa de la ubicación de Decostore en Puebla" width="600" height="600" loading="lazy" class="h-full w-full object-cover" /></div>
+        </div>
+      </section>
+
+      <section id="payment-info" aria-labelledby="payment-title" class="bg-white px-5 py-20 sm:px-8 md:py-28 lg:px-12">
+        <div class="mx-auto max-w-5xl text-center">
+          <span class="mx-auto grid size-12 place-items-center rounded-2xl bg-deco-green/15 text-deco-green-title"><FontAwesomeIcon icon={faCreditCard} aria-hidden="true" className="h-5" /></span>
+          <p class="mt-7 text-sm font-bold uppercase tracking-[.18em] text-deco-gray">Opciones de pago</p>
+          <h2 id="payment-title" class="mt-3 text-balance text-3xl font-bold leading-tight text-deco-green-title sm:text-4xl md:text-5xl">Tu proyecto, con una forma de pago cómoda.</h2>
+          <p class="mx-auto mt-5 max-w-2xl text-lg leading-8 text-deco-gray">Aceptamos tarjetas de crédito y diferentes medios de pago. Consulta las opciones disponibles para tu instalación.</p>
+          <div class="mx-auto mt-10 flex max-w-3xl flex-wrap items-center justify-center gap-x-8 gap-y-6 rounded-3xl border border-stone-200 bg-stone-50 px-6 py-8 sm:gap-x-12">
+            {cardBrands.map((brand) => (<img src={brand.src} alt={brand.alt} width={brand.width} height={brand.height} loading="lazy" class="h-9 w-20 object-contain grayscale transition hover:grayscale-0" />))}
+          </div>
+          <details class="group mx-auto mt-6 max-w-3xl rounded-2xl border border-stone-200 bg-white text-left">
+            <summary class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 px-5 py-3 font-semibold text-deco-green-title focus:outline-none focus:ring-4 focus:ring-inset focus:ring-deco-green/25 [&::-webkit-details-marker]:hidden">
+              Ver bancos participantes <span aria-hidden="true" class="text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <div class="grid grid-cols-3 gap-5 border-t border-stone-200 p-5 sm:grid-cols-4 md:grid-cols-6">
+              {bankBrands.map((brand, index) => (<img src={`/cards/${brand}`} alt={`Banco participante ${index + 1}`} loading="lazy" class="h-10 w-full object-contain" />))}
+            </div>
+          </details>
+          <a href={paymentUrl} target="_blank" rel="noreferrer" class="mt-8 inline-flex min-h-14 items-center justify-center gap-3 rounded-full bg-deco-green-title px-7 font-bold text-white transition hover:bg-deco-green focus:outline-none focus:ring-4 focus:ring-deco-green/30 active:scale-[.98]">
+            Consultar opciones de pago <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" className="h-4" />
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer id="social-media" class="bg-deco-blue px-5 py-16 text-white sm:px-8 lg:px-12">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-10 border-b border-white/15 pb-12 md:grid-cols-[1fr_auto] md:items-end">
+          <div>
+            <img src="/decostorelogo.svg" alt="Decostore" width="160" height="58" class="h-auto w-36 brightness-0 invert" />
+            <h2 class="mt-7 max-w-xl text-balance text-3xl font-bold leading-tight sm:text-4xl">Inspírate y conecta con nosotros.</h2>
+            <p class="mt-4 max-w-xl text-lg leading-8 text-white/70">Conoce ideas, materiales y proyectos para transformar tus espacios.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap md:max-w-md md:justify-end">
+            {socialLinks.map((social) => (
+              <a href={social.href} target="_blank" rel="noreferrer" class="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/25 px-5 font-semibold transition hover:border-deco-green hover:bg-deco-green hover:text-deco-blue focus:outline-none focus:ring-4 focus:ring-deco-green/40 active:scale-[.98]">
+                <FontAwesomeIcon icon={social.icon} aria-hidden="true" className="h-4" />{social.name}
+              </a>
+            ))}
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 pt-8 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
+          <p>Decostore · Soluciones para interiores y exteriores</p><p>Puebla y Los Mochis, México</p>
+        </div>
+      </div>
+    </footer>
   </div>
-  <SectionMap client:load classes="py-10 3sm:pt-20 1lg:pt-[120px]" />
-  <SectionPay client:load classes="pb-10 3sm:pt-20" />
-  <SectionSocialMedia client:load classes="pb-20 md:pt-20" />
 </Layout>

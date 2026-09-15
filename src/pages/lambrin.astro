@@ -1,39 +1,45 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { Header } from "../components/Header";
-import { InfoLambrin } from "../components/pages/InfoLambrin";
-import { Footer } from "../components/Footer";
-import { GaleryCarrusel } from "../components/GaleryCarrusel";
-const imagesURL = [
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-  "/image-default.webp",
-];
+import ProductServicePage from "../components/ProductServicePage.astro";
+import {
+  faBrush,
+  faChartLine,
+  faEyeSlash,
+  faPalette,
+  faShieldHalved,
+  faSoap,
+  faTemperatureLow,
+  faScrewdriverWrench,
+} from "@fortawesome/free-solid-svg-icons";
 
-const URL =
-  "https://wa.me/5212219690933?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20instalaci%C3%B3n%20de%20lambr%C3%ADn.";
+const benefits = [
+  { icon: faBrush, title: "Estética elegante", description: "Aporta textura y un acabado que eleva espacios modernos o clásicos." },
+  { icon: faTemperatureLow, title: "Confort interior", description: "Puede ayudar a mejorar el comportamiento térmico y acústico del muro." },
+  { icon: faSoap, title: "Fácil de limpiar", description: "Requiere poco mantenimiento y facilita el cuidado cotidiano." },
+  { icon: faChartLine, title: "Valor agregado", description: "Renueva la percepción del espacio con un acabado cuidado y permanente." },
+  { icon: faShieldHalved, title: "Protección para muros", description: "Ayuda a reducir marcas ocasionadas por roces, golpes y uso diario." },
+  { icon: faEyeSlash, title: "Oculta imperfecciones", description: "Cubre superficies irregulares y ofrece una terminación visual uniforme." },
+  { icon: faPalette, title: "Diseño personalizable", description: "Puede colocarse en paños completos, acentos o composiciones decorativas." },
+  { icon: faScrewdriverWrench, title: "Instalación profesional", description: "Una colocación precisa cuida remates, encuentros y alineación." },
+];
 ---
 
-<Layout
-  title="Instalación de Lambrín - DecoStore"
-  description="Transforma tus muros con instalación de lambrín: una solución estética, funcional y versátil. Mejora la acústica y la temperatura interior, oculta imperfecciones y protege tus paredes con acabados elegantes."
-  ogImageLink=""
->
-  <Header client:only="react" />
-  <InfoLambrin client:only="react" classes="px-5 pt-5" />
-  <GaleryCarrusel
-    client:only="react"
-    classes="pt-10 4sm:pt-20 md:pt-32"
-    imagesURL={imagesURL}
-  />
-  <Footer
-    client:only="react"
-    href={URL}
-    classes={"px-5 py-10 4sm:py-20 md:py-32"}
-  />
-</Layout>
+<ProductServicePage
+  metaTitle="Instalación de lambrín decorativo | Decostore"
+  description="Transforma tus muros con instalación de lambrín: una solución estética, funcional y versátil para interiores y exteriores."
+  heroImage="/portada-lambrin.webp"
+  heroAlt="Muro interior revestido con lambrín decorativo"
+  productName="Lambrín"
+  eyebrow="Textura y calidez para tus muros"
+  title="Un muro puede cambiar todo el ambiente."
+  lead="Lambrín decorativo instalado con precisión para aportar textura, proteger superficies y darle carácter a cada espacio."
+  highlights={["Acabado elegante", "Fácil cuidado", "Diseño versátil"]}
+  benefitsTitle="Más diseño y mejor presencia para tus muros."
+  benefitsLead="El lambrín convierte una superficie cotidiana en un elemento central, con una solución práctica y durable."
+  {benefits}
+  applicationsTitle="Un acabado que encuentra su lugar."
+  applicationsLead="Diseñamos la composición según la escala del muro, la iluminación y el estilo general del espacio."
+  applications={["Salas, comedores y recibidores", "Recámaras y muros de televisión", "Oficinas, recepciones y salas de juntas", "Fachadas y áreas comerciales compatibles con el material"]}
+  ctaTitle="Dale profundidad y carácter a tus muros."
+  ctaLead="Compártenos una foto o las medidas del espacio para orientarte sobre acabados e instalación."
+  quoteUrl="https://wa.me/5212219690933?text=Hola%2C%20me%20gustar%C3%ADa%20cotizar%20una%20instalaci%C3%B3n%20de%20lambr%C3%ADn."
+/>
